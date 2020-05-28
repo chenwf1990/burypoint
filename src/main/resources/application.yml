@@ -1,0 +1,44 @@
+server:
+  port: 8105
+
+spring:
+  datasource:
+    names: xyDataSource,stepsDataSource
+    url: jdbc:mysql://112.74.179.254:3306/burying?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&zeroDateTimeBehavior=convertToNull&serverTimezone=Asia/Shanghai
+    username: dev_burying_java
+    password: tpeudqLXSw3qRWgL
+    driverClassName: com.mysql.cj.jdbc.Driver
+    hikari:
+      connection-timeout: 600000
+      maximum-pool-size: 500
+      max-lifetime: 1800000
+      minimum-idle: 20
+      validation-timeout: 3000
+      idle-timeout: 60000
+  redis:
+    host: 112.74.179.254
+    port: 6379
+    password: e8cFnj3CoWZdUFyXg8Dkv9Vp66c=
+    database: 0
+    timeout: 30000
+  session:
+    store-type: redis
+
+  jpa:
+    database: mysql
+    show-sql: false
+    hibernate:
+    ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+  profiles:
+    active: dev
+
+  data:
+    mongodb:
+      uri: mongodb://112.74.179.254:27017/bury
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+  mapper-locations: classpath:/mappers/*.xml

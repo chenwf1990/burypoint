@@ -1,0 +1,35 @@
+spring:
+#  datasource:
+#    xyDataSource:
+#      jdbc-url: jdbc:mysql://localhost:3306/point_test1?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&zeroDateTimeBehavior=convertToNull&serverTimezone=Asia/Shanghai
+#      username: root
+#      password:
+#      driver-class-name: com.mysql.cj.jdbc.Driver
+#    stepsDataSource:
+#      jdbc-url: jdbc:mysql://localhost:3306/point_test2?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&zeroDateTimeBehavior=convertToNull&serverTimezone=Asia/Shanghai
+#      username: root
+#      password:
+#      driver-class-name: com.mysql.cj.jdbc.Driver
+  redis:
+    host: 112.74.179.254
+    port: 6379
+    password: e8cFnj3CoWZdUFyXg8Dkv9Vp66c=
+    database: 1
+    timeout: 30000
+  session:
+    store-type: redis
+
+  rabbitmq:
+    addresses: 112.74.179.254
+    username: admin
+    password: nx8260529
+
+  jpa:
+    database: mysql
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+
+  data:
+    mongodb:
+      uri: mongodb://112.74.179.254:27017/bury
